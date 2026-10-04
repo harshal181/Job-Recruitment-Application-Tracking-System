@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Update Candidate</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            padding: 20px;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1e293b;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        .dashboard-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 15px;
+            padding: 11px;
+            border-radius: 8px;
+            background: #e2e8f0;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .dashboard-btn:hover {
+            background: #cbd5e1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Update Candidate</h2>
+
+    <form action="/updatecand" method="post">
+
+        <input type="hidden" th:value="${session.c.candid}">
+
+        <input type="hidden" name="_method" value="PUT">
+
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text"
+                   name="n"
+                   th:value="${session.c.name}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="text"
+                   name="e"
+                   th:value="${session.c.email}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="text"
+                   name="pp"
+                   th:value="${session.c.password}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Education:</label>
+            <input type="text"
+                   name="ed"
+                   th:value="${session.c.education}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Address:</label>
+            <input type="text"
+                   name="ad"
+                   th:value="${session.c.address}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number:</label>
+            <input type="number"
+                   name="pn"
+                   th:value="${session.c.phonenum}"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth:</label>
+            <input type="date"
+                   name="dob"
+                   th:value="${session.c.dob}"
+                   required>
+        </div>
+
+        <button type="submit">Update Candidate</button>
+
+    </form>
+
+    <a href="/Candidatedashboardd" class="dashboard-btn">
+        Return Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>

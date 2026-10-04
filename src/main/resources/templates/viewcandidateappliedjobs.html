@@ -1,0 +1,175 @@
+
+<html>
+
+<head>
+
+<title>My Applied Jobs</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 30px;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+
+    .container {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .page-title {
+        text-align: center;
+        color: #1e293b;
+        margin-bottom: 25px;
+    }
+
+    .application-card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 22px;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+        border-left: 5px solid #4f46e5;
+    }
+
+    .application-number {
+        font-size: 18px;
+        font-weight: bold;
+        color: #4f46e5;
+        margin-bottom: 18px;
+    }
+
+    .detail {
+        display: flex;
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+
+    .label {
+        width: 150px;
+        font-weight: bold;
+        color: #334155;
+    }
+
+    .value {
+        color: #475569;
+        flex: 1;
+    }
+
+    .status {
+        font-weight: bold;
+        color: #4f46e5;
+    }
+
+    .cover-letter {
+        background: #f8fafc;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 5px;
+        color: #475569;
+        word-break: break-word;
+    }
+
+    .interview-btn {
+        margin-top: 18px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .interview-btn:hover {
+        background: #4338ca;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 class="page-title">My Applied Jobs</h2>
+
+<div th:each="apd, stat:${session.ap}" class="application-card" th:if="${apd.jid.active}">
+
+    <div class="application-number">
+        Application Number:
+        <span th:text="${stat.count}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Appid:</span>
+        <span class="value" th:text="${apd.appid}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Job ID:</span>
+        <span class="value" th:text="${apd.jid.jid}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">JobTitle:</span>
+        <span class="value" th:text="${apd.jid.jobtitle}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Jobtype:</span>
+        <span class="value" th:text="${apd.jid.jobtype}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Location:</span>
+        <span class="value" th:text="${apd.jid.location}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Salary:</span>
+        <span class="value" th:text="${apd.jid.salary}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Applied Date:</span>
+        <span class="value" th:text="${apd.applieddate}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Status:</span>
+        <span class="value status" th:text="${apd.status}"></span>
+    </div>
+
+    <div class="detail">
+        <span class="label">CoverLetter:</span>
+        <span class="value cover-letter"
+              th:text="${apd.coverletter}">
+        </span>
+    </div>
+
+    <form action="/viewinterviewdetails" method="get">
+
+        <input type="hidden"
+               th:value="${apd.appid}"
+               name="apid">
+
+        <button type="submit" class="interview-btn">
+            View InterviewDetails
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Recruitment System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            text-align: center;
+        }
+
+        .header {
+            background: #1976d2;
+            color: white;
+            padding: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            margin: 70px auto;
+            width: 400px;
+            padding: 35px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .container h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .login-btn {
+            display: block;
+            text-decoration: none;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .admin {
+            background: #1976d2;
+        }
+
+        .recruiter {
+            background: #388e3c;
+        }
+
+        .candidate {
+            background: #f57c00;
+        }
+
+        .login-btn:hover {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #777;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Job Recruitment System</h1>
+        <p>Find Jobs • Hire Talent • Build Your Career</p>
+    </div>
+
+    <div class="container">
+
+        <h2>Welcome</h2>
+
+        <a href="/adminllogin" class="login-btn admin">
+            Admin Login
+        </a>
+
+        <a href="/recruiterllogin" class="login-btn recruiter">
+            Recruiter Login
+        </a>
+
+        <a href="/candidatelogin" class="login-btn candidate">
+            Candidate Login
+        </a>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Job Recruitment & Application Tracking System</p>
+    </div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,168 @@
+
+<html>
+
+<head>
+<title>Update Recruiter</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+
+    .container {
+        width: 450px;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 28px;
+        color: #1e293b;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+        color: #334155;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        background: white;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #4f46e5;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 8px;
+    }
+
+    button:hover {
+        background: #4338ca;
+    }
+
+    .dashboard-btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 15px;
+        padding: 11px;
+        border-radius: 8px;
+        background: #e2e8f0;
+        color: #334155;
+        font-weight: bold;
+    }
+
+    .dashboard-btn:hover {
+        background: #cbd5e1;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Update Recruiter</h2>
+
+    <form action="/updaterecruiter" method="post">
+
+        <input type="hidden" name="_method" value="PUT">
+
+        <input type="hidden"
+               th:value="${session.r.rrid}"
+               name="rrid">
+
+        <div class="form-group">
+            <label>Enter Name:</label>
+            <input type="text"
+                   th:value="${session.r.name}"
+                   name="n"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Email:</label>
+            <input type="text"
+                   th:value="${session.r.email}"
+                   name="e"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Password:</label>
+            <input type="text"
+                   th:value="${session.r.password}"
+                   name="pp"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Address:</label>
+            <input type="text"
+                   th:value="${session.r.address}"
+                   name="ad"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Company ID:</label>
+
+            <select name="cid" required>
+                <option th:each="c : ${session.cc}"
+                        th:text="${c.cid}"
+                        th:value="${c.cid}"
+                        th:selected="${c.cid==session.r.cid.cid}">
+                </option>
+            </select>
+        </div>
+
+        <button type="submit">Update Recruiter</button>
+
+    </form>
+
+   
+</div>
+
+</body>
+
+</html>
+

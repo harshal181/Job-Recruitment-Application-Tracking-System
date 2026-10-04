@@ -1,0 +1,173 @@
+
+<html>
+
+<head>
+
+<title>Create Interview Schedule</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 520px;
+        background: white;
+        padding: 35px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .heading h2 {
+        margin: 0;
+        color: #1e293b;
+        font-size: 27px;
+    }
+
+    .heading p {
+        margin-top: 8px;
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 7px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 11px 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+        background: #fff;
+        transition: 0.2s;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    }
+
+    .submit-btn {
+        width: 100%;
+        margin-top: 8px;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .submit-btn:hover {
+        background: #4338ca;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heading">
+        <h2>Create Interview Schedule</h2>
+        <p>Enter interview details below</p>
+    </div>
+
+    <form action="/createinterviewschedule" method="post">
+
+        <div class="form-group">
+            <label>Enter Interview Date</label>
+            <input type="date" name="id" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Interview Time</label>
+            <input type="time" name="it" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Round</label>
+            <input type="text" name="r" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Mode</label>
+            <input type="text" name="m" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Meeting Link</label>
+            <input type="text" name="ml" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Status</label>
+            <input type="text" name="s" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter FeedBack</label>
+            <input type="text" name="fd" required>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Apppid</label>
+
+            <select name="apid" required>
+
+                <option
+                    th:each="a :${session.apps}"
+                    th:text="${a.appid}"
+                    th:value="${a.aapid}">
+                </option>
+
+            </select>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Add InterivewDetails
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

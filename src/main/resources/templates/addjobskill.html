@@ -1,0 +1,145 @@
+
+<html>
+
+<head>
+
+<title>Add Job Skill</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+
+    .container {
+        width: 470px;
+        background: white;
+        padding: 35px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .heading h2 {
+        margin: 0;
+        color: #1e293b;
+        font-size: 27px;
+    }
+
+    .heading p {
+        margin: 8px 0 0;
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+        background: white;
+        transition: 0.2s;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .submit-btn:hover {
+        background: #4338ca;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heading">
+        <h2>Add Job Skill</h2>
+        <p>Enter the skill required for the job</p>
+    </div>
+
+    <form action="/addjobskills" method="post">
+
+        <div class="form-group">
+
+            <label>Enter JobSkillName:</label>
+
+            <input type="text" name="jsl" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter jid:</label>
+
+            <select name="jid">
+
+                <option
+                    th:each="j2 : ${session.jj}"
+                    th:value="${j2.jid}"
+                    th:text=${j2.jid} th:if="${j2.active}">
+                </option>
+
+            </select>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Add Job Skill
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

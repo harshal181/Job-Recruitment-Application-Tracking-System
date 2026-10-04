@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td>rrid</td>
+<td>name</td>
+<td>email</td>
+<td>address</td>
+<td>Companyid</td>
+<td>CompanyName</td>
+<td>Delete</td>
+</tr>
+
+<tr th:each="r : ${session.r2}" th:if="${r.active}">
+<td th:text="${r.rrid}"></td>
+<td th:text="${r.name}"></td>
+<td th:text="${r.email}"></td>
+<td th:text="${r.address}"></td>
+<td th:text="${r.cid.cid}"></td>
+<td th:text="${r.cid.cname}"></td>
+   <td>
+        <form action="/deleterecruiter" method="post">
+        <input type="hidden" name="_method" value="DELETE"><br>
+        <input type="hidden" th:value="${r.rrid}" name="rrid"><br>
+        <button type="submit">DELETE</button>
+        
+        
+        </form>
+    </td>
+
+</tr>
+
+
+
+</table>
+
+</body>
+</html>

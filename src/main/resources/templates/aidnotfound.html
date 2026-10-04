@@ -1,0 +1,99 @@
+
+<html>
+
+<head>
+
+<title>Admin Login Error</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+
+    .container {
+        width: 450px;
+        background: white;
+        padding: 45px 40px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .error-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background: #fef2f2;
+        color: #dc2626;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    h3 {
+        margin: 0 0 12px;
+        color: #1e293b;
+        font-size: 23px;
+    }
+
+    .message {
+        margin: 0 0 28px;
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .try-btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #4f46e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .try-btn:hover {
+        background: #4338ca;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="error-icon">!</div>
+
+    <h3>Admin id or password incorrect</h3>
+
+    <p class="message">
+        Please check your login credentials and try again.
+    </p>
+
+    <a href="/adminllogin" class="try-btn">
+        Try Again
+    </a>
+
+</div>
+
+</body>
+
+</html>

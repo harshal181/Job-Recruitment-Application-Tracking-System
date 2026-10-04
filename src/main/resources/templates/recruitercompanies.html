@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Details</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+    padding: 13px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #eef2f5;
+}
+
+.dashboard {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.dashboard:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Company Details</h2>
+
+<table>
+
+<tr>
+
+<th>CompanyId</th>
+<th>CompanyName</th>
+<th>Email</th>
+<th>Address</th>
+<th>Website</th>
+<th>Description</th>
+<th>Active</th>
+<th>Aid</th>
+<th>AdminName</th>
+<th>PhoneNumber</th>
+
+</tr>
+
+<tr th:if="${session.c.active}">
+
+<td th:text="${session.c.cid}"></td>
+
+<td th:text="${session.c.cname}"></td>
+
+<td th:text="${session.c.email}"></td>
+
+<td th:text="${session.c.address}"></td>
+
+<td th:text="${session.c.website}"></td>
+
+<td th:text="${session.c.description}"></td>
+
+<td th:text="${session.c.active}"></td>
+
+<td th:text="${session.c.admin.aid}"></td>
+
+<td th:text="${session.c.admin.name}"></td>
+
+<td th:text="${session.c.admin.phonenum}"></td>
+
+</tr>
+
+</table>
+
+<a href="/Recrruiterdashboard">
+    <button class="dashboard">Recruiter Dashboard</button>
+</a>
+
+</div>
+
+</body>
+
+</html>

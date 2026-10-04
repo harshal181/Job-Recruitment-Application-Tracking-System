@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Successful</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 400px;
+            background: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .details {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+
+        .details span {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .note {
+            color: #dc3545;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .login-btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .login-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>Registration Successful!</h2>
+
+        <p class="message">
+            Your account has been successfully created.
+        </p>
+
+        <div class="details">
+
+            <p>
+                Your RRID:
+                <span th:text="${session.rrid}"></span>
+            </p>
+
+            <p>
+                Your Password:
+                <span th:text="${session.ppp}"></span>
+            </p>
+
+        </div>
+
+        <p class="note">
+            Please note down your RRID and Password for future login.
+        </p>
+
+        <a href="/loginall" class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+</body>
+
+</html>
+

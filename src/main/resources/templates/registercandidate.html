@@ -1,0 +1,178 @@
+
+<html>
+
+<head>
+
+<title>Candidate Registration</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        padding: 30px 15px;
+    }
+
+    .container {
+        width: 500px;
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0 0 30px;
+        color: #1e293b;
+        font-size: 27px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #4338ca;
+    }
+
+    .login-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #4f46e5;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .login-link:hover {
+        text-decoration: underline;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Candidate Registration</h2>
+
+    <form action="/registercandidate" method="post">
+
+        <div class="form-group">
+
+            <label>Enter name:</label>
+
+            <input type="text" name="n" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter email:</label>
+
+            <input type="text" name="e" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter password:</label>
+
+            <input type="text" name="pp" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter education:</label>
+
+            <input type="text" name="ed" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter Address:</label>
+
+            <input type="text" name="ad" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter Phonenum:</label>
+
+            <input type="number" name="pn" required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Enter DateofBirth:</label>
+
+            <input type="date" name="dob" required>
+
+        </div>
+
+        <button type="submit">Register</button>
+
+        <a href="/loginall" class="login-link">
+            Already Register
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
